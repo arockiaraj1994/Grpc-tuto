@@ -39,6 +39,8 @@ dependencies {
     compile 'io.grpc:grpc-netty:1.1.2'
     compile 'io.grpc:grpc-protobuf:1.1.2'
     compile 'io.grpc:grpc-stub:1.1.2'
+    // Not sure below line is required or not
+    //compile group: 'io.grpc', name: 'grpc-all', version: '1.1.2'
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
 }
