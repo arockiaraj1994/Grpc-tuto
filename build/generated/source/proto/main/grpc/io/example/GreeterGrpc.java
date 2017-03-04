@@ -31,14 +31,14 @@ public class GreeterGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<io.example.HelloWorldProto.HelloRequest,
-      io.example.HelloWorldProto.HelloReply> METHOD_SAY_HELLO =
+  public static final io.grpc.MethodDescriptor<io.example.HelloRequest,
+      io.example.HelloReply> METHOD_SAY_HELLO =
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
               "helloworld.Greeter", "SayHello"),
-          io.grpc.protobuf.ProtoUtils.marshaller(io.example.HelloWorldProto.HelloRequest.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(io.example.HelloWorldProto.HelloReply.getDefaultInstance()));
+          io.grpc.protobuf.ProtoUtils.marshaller(io.example.HelloRequest.getDefaultInstance()),
+          io.grpc.protobuf.ProtoUtils.marshaller(io.example.HelloReply.getDefaultInstance()));
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -76,8 +76,8 @@ public class GreeterGrpc {
      * </pre>
      */
     @java.lang.Override
-    public void sayHello(io.example.HelloWorldProto.HelloRequest request,
-        io.grpc.stub.StreamObserver<io.example.HelloWorldProto.HelloReply> responseObserver) {
+    public void sayHello(io.example.HelloRequest request,
+        io.grpc.stub.StreamObserver<io.example.HelloReply> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_SAY_HELLO, responseObserver);
     }
 
@@ -87,8 +87,8 @@ public class GreeterGrpc {
             METHOD_SAY_HELLO,
             asyncUnaryCall(
               new MethodHandlers<
-                io.example.HelloWorldProto.HelloRequest,
-                io.example.HelloWorldProto.HelloReply>(
+                io.example.HelloRequest,
+                io.example.HelloReply>(
                   this, METHODID_SAY_HELLO)))
           .build();
     }
@@ -122,8 +122,8 @@ public class GreeterGrpc {
      * </pre>
      */
     @java.lang.Override
-    public void sayHello(io.example.HelloWorldProto.HelloRequest request,
-        io.grpc.stub.StreamObserver<io.example.HelloWorldProto.HelloReply> responseObserver) {
+    public void sayHello(io.example.HelloRequest request,
+        io.grpc.stub.StreamObserver<io.example.HelloReply> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(METHOD_SAY_HELLO, getCallOptions()), request, responseObserver);
     }
@@ -157,7 +157,7 @@ public class GreeterGrpc {
      * </pre>
      */
     @java.lang.Override
-    public io.example.HelloWorldProto.HelloReply sayHello(io.example.HelloWorldProto.HelloRequest request) {
+    public io.example.HelloReply sayHello(io.example.HelloRequest request) {
       return blockingUnaryCall(
           getChannel(), METHOD_SAY_HELLO, getCallOptions(), request);
     }
@@ -191,8 +191,8 @@ public class GreeterGrpc {
      * </pre>
      */
     @java.lang.Override
-    public com.google.common.util.concurrent.ListenableFuture<io.example.HelloWorldProto.HelloReply> sayHello(
-        io.example.HelloWorldProto.HelloRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<io.example.HelloReply> sayHello(
+        io.example.HelloRequest request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_SAY_HELLO, getCallOptions()), request);
     }
@@ -217,8 +217,8 @@ public class GreeterGrpc {
    */
   @java.lang.Deprecated public static interface Greeter {
 
-    public void sayHello(io.example.HelloWorldProto.HelloRequest request,
-        io.grpc.stub.StreamObserver<io.example.HelloWorldProto.HelloReply> responseObserver);
+    public void sayHello(io.example.HelloRequest request,
+        io.grpc.stub.StreamObserver<io.example.HelloReply> responseObserver);
   }
 
   /**
@@ -240,7 +240,7 @@ public class GreeterGrpc {
    */
   @java.lang.Deprecated public static interface GreeterBlockingClient {
 
-    public io.example.HelloWorldProto.HelloReply sayHello(io.example.HelloWorldProto.HelloRequest request);
+    public io.example.HelloReply sayHello(io.example.HelloRequest request);
   }
 
   /**
@@ -262,8 +262,8 @@ public class GreeterGrpc {
    */
   @java.lang.Deprecated public static interface GreeterFutureClient {
 
-    public com.google.common.util.concurrent.ListenableFuture<io.example.HelloWorldProto.HelloReply> sayHello(
-        io.example.HelloWorldProto.HelloRequest request);
+    public com.google.common.util.concurrent.ListenableFuture<io.example.HelloReply> sayHello(
+        io.example.HelloRequest request);
   }
 
   /**
@@ -308,8 +308,8 @@ public class GreeterGrpc {
           METHOD_SAY_HELLO,
           asyncUnaryCall(
             new MethodHandlers<
-              io.example.HelloWorldProto.HelloRequest,
-              io.example.HelloWorldProto.HelloReply>(
+              io.example.HelloRequest,
+              io.example.HelloReply>(
                 serviceImpl, METHODID_SAY_HELLO)))
         .build();
   }
@@ -334,8 +334,8 @@ public class GreeterGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_SAY_HELLO:
-          serviceImpl.sayHello((io.example.HelloWorldProto.HelloRequest) request,
-              (io.grpc.stub.StreamObserver<io.example.HelloWorldProto.HelloReply>) responseObserver);
+          serviceImpl.sayHello((io.example.HelloRequest) request,
+              (io.grpc.stub.StreamObserver<io.example.HelloReply>) responseObserver);
           break;
         default:
           throw new AssertionError();
